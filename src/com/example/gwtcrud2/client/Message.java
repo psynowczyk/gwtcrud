@@ -1,17 +1,14 @@
 package com.example.gwtcrud2.client;
 
 import java.io.Serializable;
-import java.util.Date;
-
-import com.google.gwt.i18n.shared.DateTimeFormat;
 
 
 public class Message implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	private Integer id;
 	private String username = "";
 	private String message = "";
-	private String date = DateTimeFormat.getFormat("EEEE, MMMM dd, yyyy").format(new Date());
 	
 	public String getUsername() {
 		return username;
@@ -25,11 +22,11 @@ public class Message implements Serializable {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public String getDate() {
-		return date;
+	public Integer getId() {
+		return id;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	
 }

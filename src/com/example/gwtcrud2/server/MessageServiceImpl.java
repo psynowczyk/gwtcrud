@@ -13,12 +13,15 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 public class MessageServiceImpl extends RemoteServiceServlet implements MessageService {
 	
 	private List<Message> messages = new ArrayList<Message>();
+	private Integer messageid = 0;
 	
 	public List getMessages() {
 		return messages;
 	}
 	
 	public Message addMessage(Message msg) {
+		msg.setId(this.messageid);
+		this.messageid++;
 		this.messages.add(msg);
 		return msg;
 	}

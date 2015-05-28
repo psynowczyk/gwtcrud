@@ -29,7 +29,7 @@ public class Gwtcrud2 implements EntryPoint {
 				for (Message msg : result) {
 					Label msglistelem = new Label();
 					msglistelem.setStyleName("msglistelem");
-					msglistelem.setText(msg.getDate() +" - "+ msg.getUsername() +": "+ msg.getMessage());
+					msglistelem.setText(msg.getUsername() +": "+ msg.getMessage());
 					RootPanel.get("list").add(msglistelem);
 				}
 			}	   
