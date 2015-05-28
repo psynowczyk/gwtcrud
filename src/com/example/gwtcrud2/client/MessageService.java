@@ -12,4 +12,5 @@ public interface MessageService extends RemoteService {
 	//List<User> getAllUsers() throws IllegalArgumentException;
 	List<Message> getMessages();
 	Message addMessage(Message msg);
+	Message delMessage(Message msg);
 }

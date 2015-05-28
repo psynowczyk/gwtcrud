@@ -11,4 +11,5 @@ public interface MessageServiceAsync {
 	//void getAllUsers(AsyncCallback<List<User>> callback) throws IllegalArgumentException;
 	void getMessages(AsyncCallback<List<Message>> callback);
 	void addMessage(Message msg, AsyncCallback<Message> callback);
+	void delMessage(Message msg, AsyncCallback<Message> callback);
 }

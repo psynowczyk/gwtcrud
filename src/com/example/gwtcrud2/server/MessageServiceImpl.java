@@ -13,36 +13,24 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 public class MessageServiceImpl extends RemoteServiceServlet implements MessageService {
 	
 	private List<Message> messages = new ArrayList<Message>();
-	private Integer messageid = 0;
 	
 	public List getMessages() {
 		return messages;
 	}
 	
 	public Message addMessage(Message msg) {
-		msg.setId(this.messageid);
-		this.messageid++;
+		msg.setId(this.messages.size());
 		this.messages.add(msg);
 		return msg;
 	}
-	// validate user
-	/*
-	public boolean isValidUser(User user) throws IllegalArgumentException {
-		if (!FieldVerifier.isValidName(user.getName()) || !FieldVerifier.isValidDob(user.getDob())) {
-			throw new IllegalArgumentException("Name must contain Firstname and Lastname.");
+
+	public Message delMessage(Message msg) {
+		int index = msg.getId();
+		for (int x = index + 1; x < this.messages.size(); x++) {
+			this.messages.get(x).setId(x-1);
 		}
-		else return true;
+		this.messages.remove(index);
+		return msg;
 	}
-	
-	// set user
-	public void setUser(User user) throws IllegalArgumentException {
-		this.users.add(user);
-	}
-	
-	// get all users
-	public List<User> getAllUsers() throws IllegalArgumentException {
-		return users;
-	}
-	*/
 
 }
